@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: >
+      Staging model for raw event data extracted from the `events_parsed` table produced by Airbyte.
+      This model standardizes column names, casts timestamps, and prepares data for downstream modeling.
+
+    columns:
+      - name: event
+        description: Name of the user action or system event.
+        tests:
+          - not_null
+
+      - name: occurred_at
+        description: Timestamp of when the event occurred, casted to DateTime.
+        tests:
+          - not_null
+
+      - name: user_id
+        description: Unique identifier of the user who performed the event.
+        tests:
+          - not_null
+
+      - name: user_email
+        description: Email address of the user, if available in the raw data.
+
+      - name: tool_id
+        description: ID of the tool used during the event, if applicable.

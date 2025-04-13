@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: events
+    description: >
+      Intermediate model that enriches raw events from the staging layer by generating surrogate keys
+      and exposing key fields needed for dimensional modeling.
+
+    columns:
+      - name: event_id
+        description: Surrogate key generated for the event description.
+        tests:
+          - not_null
+      
+      - name: unique_id
+        description: Surrogate key combining event_id and user_id to uniquely identify the table row.
+        tests:
+          - not_null
+          - unique
+
+      - name: event_description
+        description: Original event name as collected from the raw data.
+
+      - name: user_id
+        description: Unique identifier for the user associated with the event.
+
+      - name: user_email
+        description: Email of the user, if available.
+
+      - name: occurred_at
+        description: Timestamp when the event occurred.
+
+      - name: tool_id
+        description: Identifier of the tool involved in the event, if applicable.

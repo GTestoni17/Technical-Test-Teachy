@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_events
+    description: >
+      Dimension table containing the list of unique events extracted from the raw event data.
+      Each row represents a distinct event with a generated surrogate key.
+    columns:
+      - name: event_id
+        description: Surrogate key uniquely identifying each event type.
+        tests:
+          - unique
+      - name: event_description
+        description: Raw event name as recorded in the source data.
+
+  - name: dim_users
+    description: >
+      Dimension table containing distinct users extracted from the events data.
+      Each row represents a unique user along with their associated email address.
+    columns:
+      - name: user_id
+        description: Unique identifier for the user.
+        tests:
+          - unique
+      - name: user_email
+        description: User's email address, if available in the event data.
+
+  - name: fct_events
+    description: >
+      Fact table representing user interactions and events.
+      Each row links a user to an event, along with the tool used and the timestamp when the event occurred.
+    columns:
+      - name: unique_id
+        description: Unique identifier for the fact row.
+      - name: event_id
+        description: Foreign key reference to the dim_events table.
+      - name: user_id
+        description: Foreign key reference to the dim_users table.
+      - name: tool_id
+        description: ID of the tool involved in the event, if applicable.
+      - name: occurred_at
+        description: Timestamp when the event occurred, in DateTime format.

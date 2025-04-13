@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: airbyte_internal
+    database: airbyte_internal
+    schema: airbyte_internal
+    tables:
+      - name: events_parsed
