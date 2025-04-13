@@ -1,6 +1,6 @@
 # Metabase
 
-The sql queries are stored on the (`dbt/analyses/`) folder.
+The sql queries are stored on the [`dbt/analyses/`](./dbt/analyses/) folder.
 
 ## Week 1 Retention (Cohort by Week)
 ![Week 1 Retention](./images/week1cohort.png)
