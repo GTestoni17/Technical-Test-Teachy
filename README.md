@@ -4,7 +4,7 @@ Welcome to the Data Engineer / ML Scientist @ Teachy Case repository. Below is a
 
 ## 🧠 Overview
 
-- [README (Setup & Infrastructure)](./setup_README.md)
+- [Setup (Setup & Infrastructure)](./setup_README.md)
 - [DBT Models & Structure](./dbt_README.md)
 - [Metabase Analyses](./metabase_README.md)
 
