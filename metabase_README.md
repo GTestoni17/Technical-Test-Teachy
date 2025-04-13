@@ -242,6 +242,8 @@ ORDER BY used_before_create DESC
 LIMIT 5;
 ```
 
+The second version is the one in the dashboards.
+
 ## Retention Attribution by AI Tool (Last 6 Months)
 ![Retention Attribution by AI Tool](./images/retentionaitool.png)
 

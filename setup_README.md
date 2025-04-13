@@ -31,7 +31,7 @@ Based on these points, I selected the following stack for the project:
   - Automatically maps optional fields, adjusting schemas dynamically.
   - Tracks data updates and ingests new files as they arrive.
   - Chosen for being **open-source** with solid support for both **Google Drive** and **ClickHouse**.
-- Note: schema mapping for nested/optional fields is only available in the paid version. As a workaround, I created a parsed view manually (`data_ingestion/parsed_view.sql`).
+- Note: schema mapping for nested/optional fields is only available in the paid version. As a workaround, I created a parsed view manually [`data_ingestion/parsed_view.sql`](./data_ingestion/parsed_view.sql).
 
 #### 3. ClickHouse
 
@@ -77,7 +77,7 @@ Based on these points, I selected the following stack for the project:
 #### 3. ClickHouse
 
 - Deployed via Kubernetes for easier integration with Airbyte (avoids networking issues like firewall config).
-- Configuration defined in `server/clickhouse.yaml`.
+- Configuration defined in [`server/clickhouse.yaml`](./server/clickhouse.yaml).
 - Deployed using the following commands:
 
 ```powershell
@@ -93,7 +93,7 @@ kubectl port-forward -n airbyte-abctl service/clickhouse 8123:8123
 #### 4. DBeaver
 
 - Installed using the standard Windows installer.
-- Connection configured with credentials from `clickhouse.yaml`.
+- Connection configured with credentials from [`server/clickhouse.yaml`](./server/clickhouse.yaml)`.
 
 #### 5. DBT
 
@@ -101,5 +101,5 @@ kubectl port-forward -n airbyte-abctl service/clickhouse 8123:8123
 
 #### 6. Metabase
 
-- Deployed via Kubernetes using `server/metabase.yaml`.
+- Deployed via Kubernetes using [`server/metabase.yaml`](./server/metabase.yaml).
 - Accessed via port-forward with a command similar to ClickHouse (changing the service name).
