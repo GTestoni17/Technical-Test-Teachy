@@ -40,7 +40,7 @@ Based on these points, I selected the following stack for the project:
 - A powerful open-source **columnar data warehouse**, well-suited for analytical workloads.
 - Chosen both due to the case suggestion and its strong compatibility with Airbyte and dbt.
 
-#### 4. dbt
+#### 4. DBT
 
 - Used for **data modeling** and **transformations** on top of raw ingested data.
 - Offers great maintainability and versioning for SQL transformations.
@@ -97,7 +97,7 @@ kubectl port-forward -n airbyte-abctl service/clickhouse 8123:8123
 - Installed using the standard Windows installer.
 - Connection configured with credentials from `clickhouse.yaml`.
 
-#### 5. dbt
+#### 5. DBT
 
 - Installed using Python pip, following [ClickHouse dbt setup guide](https://clickhouse.com/docs/integrations/dbt).
 
